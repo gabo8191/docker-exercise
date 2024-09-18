@@ -1,0 +1,17 @@
+{
+	"name": "extern-apis-consume",
+	"version": "1.0.0",
+	"description": "consumption of external apis",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "node --watch server-mayusculas.js"
+	},
+	"author": "gabriel_castillo",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.7.7",
+		"cors": "^2.8.5",
+		"express": "^4.21.0"
+	}
+}

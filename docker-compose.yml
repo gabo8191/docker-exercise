@@ -1,0 +1,34 @@
+services:
+  server1:
+    build:
+      context: ./server1
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+  server2:
+    build:
+      context: ./server2
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  middleware:
+    build:
+      context: ./middleware
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - SERVER_1_URL=http://server1:8000
+      - SERVER_2_URL=http://server2:3000
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
