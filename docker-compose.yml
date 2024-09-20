@@ -26,6 +26,8 @@ services:
     environment:
       - SERVER_1_URL=http://server1:8000
       - SERVER_2_URL=http://server2:3000
+    volumes:
+      - ./logs:/usr/src/app/logs # Monta el directorio de logs
     networks:
       - app-network
 
